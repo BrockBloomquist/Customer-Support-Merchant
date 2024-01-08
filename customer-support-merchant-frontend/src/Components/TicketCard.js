@@ -6,7 +6,6 @@ export default function TicketCard(id, name, email, description, type, date) {
   function truncate(str) {
     return str.length > 10 ? str.substring(0, 55) + "..." : str;
   }
-  function parseTickets() {}
   function handleClick() {}
   const desc = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
