@@ -26,7 +26,7 @@ function Header() {
             right: "0px",
           }}
         >
-          Support Ticket Form
+          Support Ticket View
         </h3>
       </Navbar>
     </>
