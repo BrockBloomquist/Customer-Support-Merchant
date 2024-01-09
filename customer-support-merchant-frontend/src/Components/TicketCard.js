@@ -1,8 +1,12 @@
 import Button from "react-bootstrap/Button";
-import { useEffect, useState } from "react";
-export default function TicketCard(id, name, email, description, type, date) {
-  const [isLoading, setLoading] = useState(false);
-  const [isSelected, setSelected] = useState(false);
+export default function TicketCard({
+  id,
+  name,
+  email,
+  description,
+  type,
+  date,
+}) {
   function truncate(str) {
     return str.length > 10 ? str.substring(0, 55) + "..." : str;
   }
@@ -16,7 +20,13 @@ export default function TicketCard(id, name, email, description, type, date) {
             culpa qui officia deserunt mollit anim id est laborum.`;
   return (
     <>
-      <Button variant="light" onClick={handleClick}>
+      <Button
+        variant="light"
+        onClick={handleClick}
+        style={{
+          padding: "0px 0px 0px 0px",
+        }}
+      >
         <div
           style={{
             border: "1px solid",
@@ -24,10 +34,11 @@ export default function TicketCard(id, name, email, description, type, date) {
             minHeight: "100px",
             maxHeight: "150px",
             textAlign: "left",
+            alignContent: "flex-start",
           }}
         >
-          <h6>{"name, email, type"}</h6>
-          <h6>{"id"}</h6>
+          <h6>{name}</h6>
+          <h6>{id}</h6>
           <span
             style={{
               overflow: "hidden",
