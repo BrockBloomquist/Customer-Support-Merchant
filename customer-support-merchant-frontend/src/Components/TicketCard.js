@@ -1,5 +1,8 @@
 import Button from "react-bootstrap/Button";
+import { useState } from "react";
+import "./CSS/TicketCard.css";
 export default function TicketCard({
+  idx,
   id,
   name,
   email,
@@ -8,47 +11,38 @@ export default function TicketCard({
   date,
 }) {
   function truncate(str) {
-    return str.length > 10 ? str.substring(0, 55) + "..." : str;
+    return str.length > 55 ? str.substring(0, 55) + "..." : str;
   }
-  function handleClick() {}
-  const desc = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.`;
+  function parseDate(date) {
+    let year = date.substring(0, 4);
+    let month = date.substring(5, 7);
+    let day = date.substring(8, 10);
+    return month + "/" + day + "/" + year;
+  }
   return (
     <>
-      <Button
-        variant="light"
-        onClick={handleClick}
+      <div
         style={{
-          padding: "0px 0px 0px 0px",
+          borderBottom: "1px solid",
+          width: "400px",
+          minHeight: "100px",
+          maxHeight: "150px",
+          textAlign: "left",
         }}
       >
-        <div
+        <h6>Full name: {name}</h6>
+        <h6>Email: {email}</h6>
+        <h6>Type: {type}</h6>
+        <h6>Date submitted: {parseDate(date)}</h6>
+        <span
           style={{
-            border: "1px solid",
-            width: "400px",
-            minHeight: "100px",
-            maxHeight: "150px",
-            textAlign: "left",
-            alignContent: "flex-start",
+            overflow: "hidden",
+            textOverflow: "ellipsis",
           }}
         >
-          <h6>{name}</h6>
-          <h6>{id}</h6>
-          <span
-            style={{
-              overflow: "hidden",
-              textOverflow: "ellipsis",
-            }}
-          >
-            {truncate(desc)}
-          </span>
-        </div>
-      </Button>
+          {truncate(description)}
+        </span>
+      </div>
     </>
   );
 }

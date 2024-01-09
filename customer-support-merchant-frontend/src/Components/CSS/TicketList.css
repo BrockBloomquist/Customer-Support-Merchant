@@ -1,6 +1,9 @@
 .ticket-list-container {
-  align-self: flex-start;
-  margin-right: auto;
-  justify-content: flex-start;
-  width: 400px;
+  position: absolute;
+  left: 0px;
+  width: 300px;
+  padding-top: 0px;
+  border-right: 2px solid;
+  height: 1000px;
+  width: 405px;
 }
