@@ -6,19 +6,26 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
 import ToggleButton from "react-bootstrap/ToggleButton";
-import "./CSS/TicketList.css";
+import "./CSS/Ticket.css";
+import TicketView from "./TicketView";
+
+export function getCurrentTicket() {}
 
 export default function TicketList() {
   const url = "http://localhost:3005/tickets";
   const [isLoading, setIsLoading] = useState(false);
+  const [isSelected, setIsSelected] = useState(false);
   const [tickets, setTickets] = useState([]);
   const [radioValue, setRadioValue] = useState(0);
   const [ticket, setTicket] = useState(false);
   function handleSelected(e, idx) {
     setRadioValue(e.currentTarget.value);
+    setIsSelected(true);
+    setTicket(tickets[idx]);
   }
   useEffect(() => {
     async function getTicketList() {
+      setIsSelected(false);
       setTickets([]);
       setTicket(false);
       setIsLoading(true);
@@ -49,6 +56,11 @@ export default function TicketList() {
     }
     getTicketList();
   }, []);
+  useEffect(() => {
+    const tempTicket = tickets[radioValue];
+    setTicket(tickets[radioValue - 1]);
+    console.log(ticket);
+  }, [radioValue]);
 
   return (
     <>
@@ -79,7 +91,7 @@ export default function TicketList() {
                     checked={radioValue == idx + 1}
                     className="ticket-card-btn"
                     type="radio"
-                    onChange={(e) => handleSelected(e, idx + 1)}
+                    onChange={(e) => handleSelected(e, idx)}
                   >
                     <TicketCard
                       key={idx}
@@ -97,6 +109,7 @@ export default function TicketList() {
           </Col>
         )}
       </Container>
+      {isSelected && <TicketView t={ticket} />}
     </>
   );
 }

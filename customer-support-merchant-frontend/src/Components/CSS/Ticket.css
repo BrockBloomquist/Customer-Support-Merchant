@@ -1,0 +1,15 @@
+/****************************TicketCard CSS**********************************/
+.ticket-card-btn {
+  padding: 0px 0px 0px 0px;
+}
+
+/****************************TicketList CSS**********************************/
+.ticket-list-container {
+  position: absolute;
+  left: 0px;
+  width: 300px;
+  padding-top: 0px;
+  border-right: 2px solid;
+  height: 1000px;
+  width: 405px;
+}

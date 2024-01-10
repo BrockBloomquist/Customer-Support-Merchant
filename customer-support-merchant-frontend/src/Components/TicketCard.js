@@ -1,6 +1,6 @@
 import Button from "react-bootstrap/Button";
 import { useState } from "react";
-import "./CSS/TicketCard.css";
+import "./CSS/Ticket.css";
 export default function TicketCard({
   idx,
   id,
