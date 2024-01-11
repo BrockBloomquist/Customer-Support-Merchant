@@ -10,10 +10,11 @@ export default function TicketView({ t }) {
   }
   return (
     <>
-      <Container className="Ticket">
+      <Container className="ticket-view-container">
+        <h1>Ticket View</h1>
         <Col>
           <Row>
-            <h1>Full Name: {t.fullName}</h1>
+            <h2>Full Name: {t.fullName}</h2>
           </Row>
         </Col>
       </Container>
