@@ -1,6 +1,12 @@
 import Button from "react-bootstrap/Button";
 import { useState } from "react";
 import "./CSS/Ticket.css";
+export function parseDate(date) {
+  let year = date.substring(0, 4);
+  let month = date.substring(5, 7);
+  let day = date.substring(8, 10);
+  return month + "/" + Number(day - 1) + "/" + year;
+}
 export default function TicketCard({
   idx,
   id,
@@ -13,12 +19,7 @@ export default function TicketCard({
   function truncate(str) {
     return str.length > 55 ? str.substring(0, 55) + "..." : str;
   }
-  function parseDate(date) {
-    let year = date.substring(0, 4);
-    let month = date.substring(5, 7);
-    let day = date.substring(8, 10);
-    return month + "/" + day + "/" + year;
-  }
+
   return (
     <>
       <div
@@ -34,14 +35,6 @@ export default function TicketCard({
         <h6>Email: {email}</h6>
         <h6>Type: {type}</h6>
         <h6>Date submitted: {parseDate(date)}</h6>
-        <span
-          style={{
-            overflow: "hidden",
-            textOverflow: "ellipsis",
-          }}
-        >
-          {truncate(description)}
-        </span>
       </div>
     </>
   );

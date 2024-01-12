@@ -57,9 +57,7 @@ export default function TicketList() {
     getTicketList();
   }, []);
   useEffect(() => {
-    const tempTicket = tickets[radioValue];
     setTicket(tickets[radioValue - 1]);
-    console.log(ticket);
   }, [radioValue]);
 
   return (
@@ -109,7 +107,7 @@ export default function TicketList() {
           </Col>
         )}
       </Container>
-      {isSelected && <TicketView t={ticket} />}
+      <TicketView t={ticket} isSelected={isSelected} />
     </>
   );
 }

@@ -10,8 +10,16 @@
   width: 300px;
   padding-top: 0px;
   border-right: 2px solid;
+  border-top: 2px solid;
   height: 1000px;
   width: 405px;
+  display: flex;
+}
+.container-spinner {
+  position: relative;
+  display: flex;
+  left: 50%;
+  top: 50%;
 }
 
 /****************************TicketView CSS**********************************/
@@ -19,14 +27,16 @@
   position: relative;
   border: 1px solid;
   left: 210px;
+  margin-top: 10px;
 }
 .ticket-view-container h1 {
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
+  padding-bottom: 10px;
 }
 .ticket-view-container h2 {
   position: relative;
-  left: 105px;
+  left: 0px;
 }
