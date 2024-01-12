@@ -6,14 +6,17 @@
 /****************************TicketList CSS**********************************/
 .ticket-list-container {
   position: absolute;
-  left: 0px;
+  left: -10px;
   width: 300px;
   padding-top: 0px;
   border-right: 2px solid;
   border-top: 2px solid;
+  margin-left: 0px;
+  margin-right: 0px;
   height: 1000px;
-  width: 405px;
+  width: 416px;
   display: flex;
+  border-radius: 0px 5px 0px 0px;
 }
 .container-spinner {
   position: relative;
@@ -21,13 +24,22 @@
   left: 50%;
   top: 50%;
 }
+.list-group-item-ticketlist {
+  padding: 0px 0px 0px 0px;
+  left: 0px;
+  margin: 0px 0px 0px 0px;
+  flex-direction: column;
+  box-sizing: content-box;
+}
 
 /****************************TicketView CSS**********************************/
 .ticket-view-container {
   position: relative;
-  border: 1px solid;
-  left: 210px;
+  border: 2px solid;
+  left: 25%;
   margin-top: 10px;
+  margin-left: 0px;
+  border-radius: 25px;
 }
 .ticket-view-container h1 {
   display: flex;

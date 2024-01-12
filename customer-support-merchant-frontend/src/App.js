@@ -17,6 +17,9 @@ function App() {
         id="ticket-tabs"
         activeKey={key}
         onSelect={(k) => setKey(k)}
+        unmountOnExit
+        variant="pills"
+        transition={true}
       >
         <Tab eventKey="tickets" title="Tickets">
           <TicketList />

@@ -8,6 +8,7 @@ import ButtonGroup from "react-bootstrap/ButtonGroup";
 import ToggleButton from "react-bootstrap/ToggleButton";
 import "./CSS/Ticket.css";
 import TicketView from "./TicketView";
+import ListGroup from "react-bootstrap/ListGroup";
 
 export function getCurrentTicket() {}
 
@@ -73,40 +74,43 @@ export default function TicketList() {
           </Spinner>
         )}
         {!isLoading && (
-          <Col>
+          <ListGroup className="list-group-ticketlist">
             <ButtonGroup
               style={{
                 flexDirection: "column",
+                position: "absolute",
               }}
             >
-              <Row>
-                {tickets.map((t, idx) => (
-                  <ToggleButton
-                    variant="light"
-                    id={`radio-${idx}`}
+              {tickets.map((t, idx) => (
+                <ToggleButton
+                  style={{
+                    boxSizing: "border-box",
+                  }}
+                  variant="light"
+                  id={`radio-${idx}`}
+                  key={idx}
+                  value={idx + 1}
+                  checked={radioValue == idx + 1}
+                  className="ticket-card-btn"
+                  type="radio"
+                  onChange={(e) => handleSelected(e, idx)}
+                >
+                  <TicketCard
                     key={idx}
-                    value={idx + 1}
-                    checked={radioValue == idx + 1}
-                    className="ticket-card-btn"
-                    type="radio"
-                    onChange={(e) => handleSelected(e, idx)}
-                  >
-                    <TicketCard
-                      key={idx}
-                      id={t.id}
-                      name={t.fullName}
-                      email={t.email}
-                      description={t.description}
-                      type={t.type}
-                      date={t.date}
-                    />
-                  </ToggleButton>
-                ))}
-              </Row>
+                    id={t.id}
+                    name={t.fullName}
+                    email={t.email}
+                    description={t.description}
+                    type={t.type}
+                    date={t.date}
+                  />
+                </ToggleButton>
+              ))}
             </ButtonGroup>
-          </Col>
+          </ListGroup>
         )}
       </Container>
+
       <TicketView t={ticket} isSelected={isSelected} />
     </>
   );
