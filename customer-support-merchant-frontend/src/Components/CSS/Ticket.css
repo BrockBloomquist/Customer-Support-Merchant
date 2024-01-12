@@ -13,7 +13,6 @@
   border-top: 2px solid;
   margin-left: 0px;
   margin-right: 0px;
-  height: 1000px;
   width: 416px;
   display: flex;
   border-radius: 0px 5px 0px 0px;
@@ -23,13 +22,6 @@
   display: flex;
   left: 50%;
   top: 50%;
-}
-.list-group-item-ticketlist {
-  padding: 0px 0px 0px 0px;
-  left: 0px;
-  margin: 0px 0px 0px 0px;
-  flex-direction: column;
-  box-sizing: content-box;
 }
 
 /****************************TicketView CSS**********************************/

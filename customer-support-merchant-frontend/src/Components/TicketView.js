@@ -12,7 +12,7 @@ export default function TicketView({ t, isSelected }) {
         {!isSelected && (
           <h1
             style={{
-              position: "sticky",
+              position: "relative",
               top: "30%",
               display: "flex",
             }}

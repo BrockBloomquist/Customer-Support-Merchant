@@ -63,7 +63,12 @@ export default function TicketList() {
 
   return (
     <>
-      <Container className="ticket-list-container">
+      <Container
+        className="ticket-list-container"
+        style={{
+          height: "100%",
+        }}
+      >
         {isLoading && (
           <Spinner
             animation="border"
@@ -83,9 +88,6 @@ export default function TicketList() {
             >
               {tickets.map((t, idx) => (
                 <ToggleButton
-                  style={{
-                    boxSizing: "border-box",
-                  }}
                   variant="light"
                   id={`radio-${idx}`}
                   key={idx}
