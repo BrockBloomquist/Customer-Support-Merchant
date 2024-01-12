@@ -9,7 +9,17 @@ export default function TicketView({ t, isSelected }) {
     <>
       <Container className="ticket-view-container">
         <h1>Ticket View</h1>
-        {!isSelected && <h1>No Ticket Selected!</h1>}
+        {!isSelected && (
+          <h1
+            style={{
+              position: "sticky",
+              top: "30%",
+              display: "flex",
+            }}
+          >
+            No Ticket Selected!
+          </h1>
+        )}
         {isSelected && (
           <Col>
             <Row>
