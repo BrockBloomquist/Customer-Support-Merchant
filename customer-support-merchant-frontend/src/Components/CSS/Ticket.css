@@ -3,6 +3,11 @@
   padding: 0px 0px 0px 0px;
 }
 
+.animate-div-ticket-card {
+  animation: animate__fadeIn;
+  animation-duration: 2s;
+}
+
 /****************************TicketList CSS**********************************/
 .ticket-list-container {
   position: absolute;
@@ -16,6 +21,7 @@
   width: 416px;
   display: flex;
   border-radius: 0px 5px 0px 0px;
+  box-shadow: -1px 2px 5px 0px rgba(89, 89, 89, 1);
 }
 .container-spinner {
   position: relative;
@@ -45,4 +51,8 @@
 .ticket-view-container h2 {
   position: relative;
   left: 0px;
+}
+.text-div-ticketview {
+  animation: fadeIn;
+  animation-duration: 1s;
 }

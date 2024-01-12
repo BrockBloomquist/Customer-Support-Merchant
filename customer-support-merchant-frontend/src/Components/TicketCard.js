@@ -31,10 +31,12 @@ export default function TicketCard({
           textAlign: "left",
         }}
       >
-        <h6>Full name: {name}</h6>
-        <h6>Email: {email}</h6>
-        <h6>Type: {type}</h6>
-        <h6>Date submitted: {parseDate(date)}</h6>
+        <div className="ticket-card-text">
+          <h6>Full name: {name}</h6>
+          <h6>Email: {email}</h6>
+          <h6>Type: {type}</h6>
+          <h6>Date submitted: {parseDate(date)}</h6>
+        </div>
       </div>
     </>
   );

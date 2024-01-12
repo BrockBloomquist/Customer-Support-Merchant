@@ -2,15 +2,11 @@ import { useEffect, useState } from "react";
 import TicketCard from "./TicketCard";
 import Spinner from "react-bootstrap/Spinner";
 import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
 import ToggleButton from "react-bootstrap/ToggleButton";
 import "./CSS/Ticket.css";
 import TicketView from "./TicketView";
 import ListGroup from "react-bootstrap/ListGroup";
-
-export function getCurrentTicket() {}
 
 export default function TicketList() {
   const url = "http://localhost:3005/tickets";
