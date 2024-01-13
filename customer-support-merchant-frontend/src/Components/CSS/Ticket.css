@@ -56,3 +56,6 @@
   animation: fadeIn;
   animation-duration: 1s;
 }
+.text-div-not-ticketview {
+  display: none;
+}

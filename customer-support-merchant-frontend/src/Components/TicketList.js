@@ -108,7 +108,6 @@ export default function TicketList() {
           </ListGroup>
         )}
       </Container>
-
       <TicketView t={ticket} isSelected={isSelected} />
     </>
   );

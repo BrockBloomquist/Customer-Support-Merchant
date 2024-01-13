@@ -12,6 +12,7 @@ export default function Dashboard() {
         id="ticket-tabs"
         activeKey={key}
         onSelect={(k) => setKey(k)}
+        mountOnEnter
         unmountOnExit
         variant="pills"
         transition={true}
