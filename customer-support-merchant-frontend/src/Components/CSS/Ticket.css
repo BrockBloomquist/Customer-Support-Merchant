@@ -8,6 +8,23 @@
   animation-duration: 2s;
 }
 
+.delete-button {
+  position: absolute;
+  display: inline-block;
+  left: 90%;
+  top: 30%;
+  border-radius: 50px;
+  background-color: rgba(240, 248, 255, 0);
+  border: transparent 1px solid;
+}
+.delete-button:hover {
+  background-color: rgb(131, 131, 131);
+}
+
+.delete-button img {
+  width: 15px;
+  height: 15px;
+}
 /****************************TicketList CSS**********************************/
 .ticket-list-container {
   position: absolute;

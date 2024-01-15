@@ -1,16 +1,15 @@
 import Button from "react-bootstrap/Button";
+import x from "../assets/img/xbtn.png";
 import { useState } from "react";
 import "./CSS/Ticket.css";
-import x from "../assets/img/xbtn.png";
 import Modal from "react-bootstrap/Modal";
-
 export function parseDate(date) {
   let year = date.substring(0, 4);
   let month = date.substring(5, 7);
   let day = date.substring(8, 10);
   return month + "/" + Number(day - 1) + "/" + year;
 }
-export default function TicketCard({
+export default function DeletedTicketCard({
   idx,
   id,
   name,
@@ -19,18 +18,17 @@ export default function TicketCard({
   type,
   date,
 }) {
+  const url = "http://localhost:3005/delete-ticket/" + id;
   const [show, setShow] = useState(false);
   const handleShow = () => setShow(true);
   const handleClose = () => setShow(false);
-  const url = "http://localhost:3005/trash-ticket/" + id;
-  async function handleMove() {
+  async function handleDelete() {
     fetch(url, {
       method: "POST",
     });
     handleClose();
     window.location.reload();
   }
-
   return (
     <>
       <div
@@ -63,8 +61,8 @@ export default function TicketCard({
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Button variant="danger" onClick={handleMove}>
-            Trash
+          <Button variant="danger" onClick={handleDelete}>
+            Delete
           </Button>
         </Modal.Footer>
       </Modal>

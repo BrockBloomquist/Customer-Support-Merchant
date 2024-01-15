@@ -1,9 +1,11 @@
 import TicketList from "./TicketList";
+import DeletedTicketList from "./DeletedTicketList";
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 export default function Dashboard() {
-  const [key, setKey] = useState("tickets");
+  const [key, setKey] = useState(sessionStorage.getItem("autosave"));
+  useEffect(() => sessionStorage.setItem("autosave", key), [key]);
   return (
     <>
       <Tabs
@@ -21,7 +23,7 @@ export default function Dashboard() {
           <TicketList />
         </Tab>
         <Tab eventKey="deleted-tickets" title="Deleted Tickets">
-          <h1>test</h1>
+          <DeletedTicketList />
         </Tab>
       </Tabs>
     </>
